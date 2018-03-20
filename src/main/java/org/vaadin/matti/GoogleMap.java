@@ -10,7 +10,7 @@ import com.vaadin.flow.component.dependency.HtmlImport;
 public class GoogleMap extends Component {
 
     public GoogleMap() {
-        getElement().setProperty("fit-to-markers", true);
+        getElement().setProperty("fitToMarkers", true);
         getElement().getStyle().set("width", "600px");
         getElement().getStyle().set("height", "300px");
     }
