@@ -10,7 +10,7 @@ public class GoogleMap extends Component {
 
     public GoogleMap() {
         getElement().setProperty("fitToMarkers", true);
-        getElement().getStyle().set("width", "600px");
+        getElement().getStyle().set("width", "300px");
         getElement().getStyle().set("height", "300px");
     }
 
