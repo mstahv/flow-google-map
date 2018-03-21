@@ -5,7 +5,7 @@ import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
 
 @Tag("google-map")
-@HtmlImport("bower_components/google-map/google-map.html")
+@HtmlImport("frontend://bower_components/google-map/google-map.html")
 public class GoogleMap extends Component {
 
     public GoogleMap() {

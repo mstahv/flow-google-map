@@ -23,13 +23,13 @@ public class GoogleMapMarker extends Component {
         getElement().setProperty("longitude", lon);
     }
 
-    @Synchronize("google-map-marker-dragend")
+    @Synchronize("google-map-marker-drag")
     public double getLatitude() {
         String property = getElement().getProperty("latitude");
         return Double.valueOf(property);
     }
 
-    @Synchronize("google-map-marker-dragend")
+    @Synchronize("google-map-marker-drag")
     public double getLongitude() {
         String property = getElement().getProperty("longitude");
         return Double.valueOf(property);
@@ -43,6 +43,10 @@ public class GoogleMapMarker extends Component {
 
     public Registration addDragEndListener(ComponentEventListener<DragEndEvent> dragEndListener) {
         return super.addListener(DragEndEvent.class, dragEndListener);
+    }
+    
+    public Registration addDragListener(ComponentEventListener<DragEvent> dragListener) {
+        return super.addListener(DragEvent.class, dragListener);
     }
 
 }

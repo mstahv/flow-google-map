@@ -3,6 +3,7 @@ package org.vaadin.matti;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.notification.Notification;
+import com.vaadin.flow.component.notification.Notification.Position;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.theme.Theme;
 import com.vaadin.flow.theme.lumo.Lumo;
@@ -15,10 +16,12 @@ public class DemoView extends Div {
         GoogleMap googleMap = new GoogleMap();
 
         GoogleMapMarker marker = new GoogleMapMarker();
+        
         marker.setLatitude(62);
         marker.setLongitude(24);
         
         marker.setDraggable(true);
+        //marker.addDragListener(e -> {Notification.show("" +marker.getLatitude()+marker.getLongitude(),2000,Position.BOTTOM_CENTER);});
         
         // Can't make this work for some reason
         // The data stored in the marker is kind of one step behisnd 
