@@ -6,11 +6,11 @@
     <groupId>org.vaadin.matti</groupId>
     <artifactId>google-map</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>My Starter Project</name>
+    <name>GoogleMap element integration for Vaadin Flow</name>
     <description>Experimental integration of google-map element for Vaadin 10</description>
 
     <properties>
-        <vaadin.version>10.0.0.beta2</vaadin.version>
+        <vaadin.version>10.0.0.beta3</vaadin.version>
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -75,6 +75,12 @@
             <groupId>org.webjars.bowergithub.googlewebcomponents</groupId>
             <artifactId>google-map</artifactId>
             <version>2.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vividsolutions</groupId>
+            <artifactId>jts</artifactId>
+            <version>1.13</version>
+            <type>jar</type>
         </dependency>
     </dependencies>
 

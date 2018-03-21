@@ -1,6 +1,5 @@
 package org.vaadin.matti;
 
-
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.HtmlImport;
@@ -18,4 +17,13 @@ public class GoogleMap extends Component {
     public void addMarker(GoogleMapMarker marker) {
         getElement().appendChild(marker.getElement());
     }
+
+    public void setLatitude(double lat) {
+        getElement().setProperty("latitude", lat);
+    }
+
+    public void setLongitude(double lon) {
+        getElement().setProperty("longitude", lon);
+    }
+
 }
