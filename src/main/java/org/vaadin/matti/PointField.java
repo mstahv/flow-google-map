@@ -28,20 +28,19 @@ import com.vividsolutions.jts.geom.PrecisionModel;
 public class PointField extends GoogleMap implements HasValue<PointField, Point> {
     
     private GoogleMapMarker marker = new GoogleMapMarker();
-    private Point previousvalue;
 
     public PointField() {
         marker.setDraggable(true);
         addMarker(marker);
-        marker.addDragEndListener(e -> {
-            // TODO fix old value giving always the last set value
-            fireEvent(new ValueChangeEvent<>(PointField.this, PointField.this, previousvalue, true));
+        marker.addDragEndListener(e-> {
+            // workaround for bugs/limitations in Flow/google-map element
+            setLatitude(marker.getLatitude());
+            setLongitude(marker.getLongitude());
         });
     }
 
     @Override
     public void setValue(Point v) {
-        this.previousvalue = v;
         if(v != null) {
             marker.setVisible(true);
             marker.setLatitude(v.getY());
@@ -59,5 +58,12 @@ public class PointField extends GoogleMap implements HasValue<PointField, Point>
     public Point getValue() {
         return factory.createPoint(new Coordinate(marker.getLongitude(), marker.getLatitude()));
     }
+
+    @Override
+    public String getClientValuePropertyName() {
+        // how end users can find this? What if value change should happen on multiple events?
+        // And actually, how to make the value change event happen on a property change event in the marker?
+        return "longitude";
+    }    
     
 }
